@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'button.dart';
 import 'model.dart';
 
 void main() {
@@ -29,19 +30,9 @@ class ChangeNotifierProviderApp extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.all(20),
-                color: Colors.cyan,
+                color: const Color.fromARGB(255, 151, 201, 207),
                 child: Consumer<Model>(builder: (context, model, child) {
-                  return ElevatedButton(
-                    child: const Text('Do something',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(10, 100, 10, 100),
-                        )),
-                    onPressed: () {
-                      model.doSomething();
-                    },
-                  );
+                  return const Button();
                 }),
               ),
               Container(
@@ -60,5 +51,3 @@ class ChangeNotifierProviderApp extends StatelessWidget {
     );
   }
 }
-
-
